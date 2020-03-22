@@ -21,7 +21,7 @@ class Guess2ViewController: UIViewController {
      override func viewDidLoad() {
          super.viewDidLoad()
          
-       setGuessingNumberLabelText()
+        setGuessingNumberLabelText()
      }
     
     // MARK: - Private methods
