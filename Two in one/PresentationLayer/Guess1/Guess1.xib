@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Guess1ViewController" customModule="Two_in_one" customModuleProvider="target">
             <connections>
-                <outlet property="inputNumber" destination="GqL-Nk-Kvv" id="N1a-PL-g2E"/>
+                <outlet property="inputNumberTextField" destination="GqL-Nk-Kvv" id="N1a-PL-g2E"/>
                 <outlet property="triesLabel" destination="E18-Be-mB4" id="0Bu-eu-VZ4"/>
                 <outlet property="view" destination="iN0-l3-epB" id="8g3-JF-KsQ"/>
             </connections>
@@ -37,7 +37,7 @@
                     <rect key="frame" x="191" y="300" width="32" height="30"/>
                     <state key="normal" title="OK"/>
                     <connections>
-                        <action selector="onOkButton" destination="-1" eventType="touchUpInside" id="X2E-Os-LGC"/>
+                        <action selector="didTapOkButton" destination="-1" eventType="touchUpInside" id="X2E-Os-LGC"/>
                     </connections>
                 </button>
             </subviews>

@@ -11,7 +11,10 @@ import UIKit
 class Guess2ViewController: UIViewController {
     
     // MARK: - Properties
-    @IBOutlet var guessingNumberLabel: UILabel!
+    var recordHistory: RecordsHistory?
+    
+    @IBOutlet private var guessingNumberLabel: UILabel!
+    
     private var tryNumber: Int = 1
     private var guessingNumber: Int = 500_000
     private var left: Int = 0
@@ -20,7 +23,7 @@ class Guess2ViewController: UIViewController {
     // MARK: - Public methods
      override func viewDidLoad() {
         super.viewDidLoad()
-         
+        
         setGuessingNumberLabelText()
      }
     
@@ -29,8 +32,7 @@ class Guess2ViewController: UIViewController {
          guessingNumberLabel.text = "Is your number a \(guessingNumber)? \n Try number = \(tryNumber)"
     }
     
-    @IBAction
-    private func onBiggerButton() {
+    @IBAction private func didTapBiggerButton() {
         left = guessingNumber + 1
         guessingNumber = (left + right) / 2
         tryNumber += 1
@@ -38,8 +40,7 @@ class Guess2ViewController: UIViewController {
         setGuessingNumberLabelText()
     }
     
-    @IBAction
-    private func onLesserButton() {
+    @IBAction private func didTapLesserButton() {
         right = guessingNumber - 1
         guessingNumber = (left + right) / 2
         tryNumber += 1
@@ -47,12 +48,12 @@ class Guess2ViewController: UIViewController {
         setGuessingNumberLabelText()
     }
     
-    @IBAction
-    private func onGuessedButton() {
+    @IBAction private func didTapGuessedButton() {
         let alert = UIAlertController(title: "Congratulation", message: "Cheers!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true)
         
+        recordHistory?.guess2Records.append(RecordModel(triesCount: tryNumber, guessedNumber: guessingNumber))
         reset()
     }
     

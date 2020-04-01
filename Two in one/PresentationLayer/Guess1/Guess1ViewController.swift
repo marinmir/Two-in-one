@@ -11,8 +11,10 @@ import UIKit
 class Guess1ViewController: UIViewController {
     
     // MARK: - Properties
-    @IBOutlet var inputNumber: UITextField!
-    @IBOutlet var triesLabel: UILabel!
+    var recordHistory: RecordsHistory?
+    
+    @IBOutlet private var inputNumberTextField: UITextField!
+    @IBOutlet private var triesLabel: UILabel!
     
     private var randomNumber: Int = 0
     private var tryCount: Int = 0
@@ -34,7 +36,7 @@ class Guess1ViewController: UIViewController {
         tryCount = 0
         makeRandomNumber()
         setTriesLabelText()
-        inputNumber.text = ""
+        inputNumberTextField.text = ""
     }
     
     private func setTriesLabelText() {
@@ -42,12 +44,12 @@ class Guess1ViewController: UIViewController {
     }
     
     private func checkInput(userNumber number: Int) {
-        
         var alert: UIAlertController!
         
         if number == randomNumber {
             alert = UIAlertController(title: "Congratulation", message: "Guessed!", preferredStyle: .alert)
             
+            recordHistory?.guess1Records.append(RecordModel(triesCount: tryCount, guessedNumber: randomNumber))
             reset()
         } else {
             if number > randomNumber {
@@ -64,9 +66,8 @@ class Guess1ViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    @IBAction
-    private func onOkButton() {
-        inputNumber.resignFirstResponder()
+    @IBAction private func didTapOkButton() {
+        inputNumberTextField.resignFirstResponder()
     }
     
 }
@@ -81,7 +82,7 @@ extension Guess1ViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        guard let userNumber = Int(inputNumber.text ?? "0") else {
+        guard let userNumber = Int(inputNumberTextField.text ?? "0") else {
              return
          }
         
@@ -89,11 +90,9 @@ extension Guess1ViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-        let set = CharacterSet(charactersIn:"0123456789").inverted
-        let compSepByCharInSet = string.components(separatedBy: set)
-        let numberFiltered = compSepByCharInSet.joined(separator: "")
-        return string == numberFiltered
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
     }
 
 }
