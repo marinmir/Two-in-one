@@ -10,7 +10,7 @@
 		0E4087F02433DF47004CA1C9 /* Records.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E4087EE2433DF47004CA1C9 /* Records.xib */; };
 		0E4087F12433DF47004CA1C9 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087EF2433DF47004CA1C9 /* RecordsViewController.swift */; };
 		0E4087F42433EED6004CA1C9 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087F32433EED6004CA1C9 /* RecordModel.swift */; };
-		0E4087F62433F008004CA1C9 /* RecordsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087F52433F008004CA1C9 /* RecordsHistory.swift */; };
+		0E4087F62433F008004CA1C9 /* RecordsHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087F52433F008004CA1C9 /* RecordsHistoryService.swift */; };
 		0E4087F82433F106004CA1C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087F72433F106004CA1C9 /* ViewController.swift */; };
 		0E4087FB2433F115004CA1C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4087F92433F115004CA1C9 /* Main.storyboard */; };
 		0E4087FE2433F29A004CA1C9 /* Guess1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E4087FC2433F299004CA1C9 /* Guess1.xib */; };
@@ -29,7 +29,7 @@
 		0E4087EE2433DF47004CA1C9 /* Records.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Records.xib; sourceTree = "<group>"; };
 		0E4087EF2433DF47004CA1C9 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		0E4087F32433EED6004CA1C9 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
-		0E4087F52433F008004CA1C9 /* RecordsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsHistory.swift; sourceTree = "<group>"; };
+		0E4087F52433F008004CA1C9 /* RecordsHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsHistoryService.swift; sourceTree = "<group>"; };
 		0E4087F72433F106004CA1C9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E4087FA2433F115004CA1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E4087FC2433F299004CA1C9 /* Guess1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Guess1.xib; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				0E4087F32433EED6004CA1C9 /* RecordModel.swift */,
-				0E4087F52433F008004CA1C9 /* RecordsHistory.swift */,
+				0E4087F52433F008004CA1C9 /* RecordsHistoryService.swift */,
 				0E4088042433F66D004CA1C9 /* RecordCell.swift */,
 			);
 			path = Models;
@@ -228,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E4087F62433F008004CA1C9 /* RecordsHistory.swift in Sources */,
+				0E4087F62433F008004CA1C9 /* RecordsHistoryService.swift in Sources */,
 				0E8AFA5124217B2B00795EBC /* AppDelegate.swift in Sources */,
 				0E4087F42433EED6004CA1C9 /* RecordModel.swift in Sources */,
 				0E4087FF2433F29A004CA1C9 /* Guess1ViewController.swift in Sources */,

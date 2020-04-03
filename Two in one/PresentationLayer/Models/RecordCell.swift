@@ -13,11 +13,7 @@ class RecordCell: UITableViewCell {
     // MARK: - Properties
     @IBOutlet private var recordLabel: UILabel!
     
-    // MARK: - Public methods
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
+    // MARK: Public methods
     func setRecordLabelText(triesCount count: Int,
                             guessedNumber number: Int) {
         recordLabel.text = "Tries count: \(count), guessed number: \(number)"

@@ -11,7 +11,7 @@ import UIKit
 class Guess1ViewController: UIViewController {
     
     // MARK: - Properties
-    var recordHistory: RecordsHistory?
+    var recordHistoryService: RecordsHistoryService?
     
     @IBOutlet private var inputNumberTextField: UITextField!
     @IBOutlet private var triesLabel: UILabel!
@@ -49,7 +49,8 @@ class Guess1ViewController: UIViewController {
         if number == randomNumber {
             alert = UIAlertController(title: "Congratulation", message: "Guessed!", preferredStyle: .alert)
             
-            recordHistory?.guess1Records.append(RecordModel(triesCount: tryCount, guessedNumber: randomNumber))
+            let recordModel = RecordModel(triesCount: tryCount, guessedNumber: randomNumber)
+            recordHistoryService?.addReсord(gameType: .guess1, record: recordModel)
             reset()
         } else {
             if number > randomNumber {
@@ -62,7 +63,8 @@ class Guess1ViewController: UIViewController {
             setTriesLabelText()
         }
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
         present(alert, animated: true)
     }
     

@@ -14,7 +14,7 @@ class RecordsViewController: UIViewController {
     @IBOutlet private var recordsTableView: UITableView!
     @IBOutlet private var segmentedControl: UISegmentedControl!
     
-    var recordHistory: RecordsHistory?
+    var recordHistoryService: RecordsHistoryService?
     private var recordItems: [RecordModel]?
     
     // MARK: - Public methods
@@ -23,16 +23,16 @@ class RecordsViewController: UIViewController {
         
         navigationItem.title = "Records"
         recordsTableView.register(UINib(nibName: "RecordCell", bundle: nil), forCellReuseIdentifier: "RecordCell")
-        recordItems = recordHistory?.guess1Records
+        recordItems = recordHistoryService?.getRecords(gameType: .guess1)
      }
 
     // MARK: - Private methods
     @IBAction private func didChangedGame(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            recordItems = recordHistory?.guess1Records
+            recordItems = recordHistoryService?.getRecords(gameType: .guess1)
         case 1:
-            recordItems = recordHistory?.guess2Records
+            recordItems = recordHistoryService?.getRecords(gameType: .guess2)
         default:
             recordItems = []
         }
@@ -42,24 +42,25 @@ class RecordsViewController: UIViewController {
     @IBAction private func didTapSortButton() {
         let alert = UIAlertController(title: "Sorting", message: "How would you like to sort?", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "descending number of tries", style: .default) {[weak self] action -> Void in
-            self?.sortDescendingTriesNumber()})
-            
-        alert.addAction(UIAlertAction(title: "descending guessed number", style: .default) {[weak self] action -> Void in
-            self?.sortDescendindGuessedNumber()})
+        let descendingTriesNumberPredicate: (RecordModel, RecordModel) -> Bool = {$0.triesCount > $1.triesCount}
+        let descendingTriesNumberAction = UIAlertAction(title: "Descending number of tries", style: .default) {[weak self] _ -> Void in
+            self?.sortRecords(by: descendingTriesNumberPredicate)
+        }
+        alert.addAction(descendingTriesNumberAction)
+        
+        let descendingGuessedNumberPredicate: (RecordModel, RecordModel) -> Bool = {$0.guessedNumber > $1.guessedNumber}
+        let descendingGuessedNumberAction = UIAlertAction(title: "Descending guessed number", style: .default) {[weak self] _ -> Void in
+        self?.sortRecords(by: descendingGuessedNumberPredicate)
+        }
+        alert.addAction(descendingGuessedNumberAction)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     
         present(alert, animated: true)
     }
     
-    private func sortDescendingTriesNumber() {
-        recordItems?.sort{$0.triesCount > $1.triesCount}
-        recordsTableView.reloadData()
-    }
-    
-    private func sortDescendindGuessedNumber() {
-        recordItems?.sort{$0.guessedNumber > $1.guessedNumber}
+    private func sortRecords(by predicate: @escaping (RecordModel, RecordModel) -> Bool) {
+        recordItems?.sort(by: predicate)
         recordsTableView.reloadData()
     }
     

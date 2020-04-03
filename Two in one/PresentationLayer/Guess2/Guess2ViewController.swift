@@ -11,7 +11,7 @@ import UIKit
 class Guess2ViewController: UIViewController {
     
     // MARK: - Properties
-    var recordHistory: RecordsHistory?
+    var recordHistoryService: RecordsHistoryService?
     
     @IBOutlet private var guessingNumberLabel: UILabel!
     
@@ -50,10 +50,13 @@ class Guess2ViewController: UIViewController {
     
     @IBAction private func didTapGuessedButton() {
         let alert = UIAlertController(title: "Congratulation", message: "Cheers!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
         present(alert, animated: true)
         
-        recordHistory?.guess2Records.append(RecordModel(triesCount: tryNumber, guessedNumber: guessingNumber))
+        let recordModel = RecordModel(triesCount: tryNumber, guessedNumber: guessingNumber)
+        recordHistoryService?.addReсord(gameType: .guess2, record: recordModel)
         reset()
     }
     
