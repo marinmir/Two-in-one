@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E265FA624424790002AF298 /* RecordHistoryServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E265FA524424790002AF298 /* RecordHistoryServiceProtocol.swift */; };
 		0E4087F02433DF47004CA1C9 /* Records.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E4087EE2433DF47004CA1C9 /* Records.xib */; };
 		0E4087F12433DF47004CA1C9 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087EF2433DF47004CA1C9 /* RecordsViewController.swift */; };
 		0E4087F42433EED6004CA1C9 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087F32433EED6004CA1C9 /* RecordModel.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E265FA524424790002AF298 /* RecordHistoryServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistoryServiceProtocol.swift; sourceTree = "<group>"; };
 		0E4087EE2433DF47004CA1C9 /* Records.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Records.xib; sourceTree = "<group>"; };
 		0E4087EF2433DF47004CA1C9 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		0E4087F32433EED6004CA1C9 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				0E4087F32433EED6004CA1C9 /* RecordModel.swift */,
 				0E4087F52433F008004CA1C9 /* RecordsHistoryService.swift */,
 				0E4088042433F66D004CA1C9 /* RecordCell.swift */,
+				0E265FA524424790002AF298 /* RecordHistoryServiceProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				0E4087F62433F008004CA1C9 /* RecordsHistoryService.swift in Sources */,
 				0E8AFA5124217B2B00795EBC /* AppDelegate.swift in Sources */,
 				0E4087F42433EED6004CA1C9 /* RecordModel.swift in Sources */,
+				0E265FA624424790002AF298 /* RecordHistoryServiceProtocol.swift in Sources */,
 				0E4087FF2433F29A004CA1C9 /* Guess1ViewController.swift in Sources */,
 				0E4088052433F66D004CA1C9 /* RecordCell.swift in Sources */,
 				0E8AFA5324217B2B00795EBC /* SceneDelegate.swift in Sources */,

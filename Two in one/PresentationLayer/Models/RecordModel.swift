@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RecordModel {
+struct RecordModel: Codable {
     
     var triesCount: Int
     var guessedNumber: Int

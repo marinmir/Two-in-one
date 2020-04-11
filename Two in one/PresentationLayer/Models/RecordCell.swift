@@ -13,7 +13,7 @@ class RecordCell: UITableViewCell {
     // MARK: - Properties
     @IBOutlet private var recordLabel: UILabel!
     
-    // MARK: Public methods
+    // MARK: - Public methods
     func setRecordLabelText(triesCount count: Int,
                             guessedNumber number: Int) {
         recordLabel.text = "Tries count: \(count), guessed number: \(number)"
