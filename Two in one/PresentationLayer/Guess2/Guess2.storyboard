@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Guess2 View Controller-->
+        <scene sceneID="Fk3-ZP-4Wx">
+            <objects>
+                <viewController storyboardIdentifier="Guess2VC" id="dRQ-G4-oD6" customClass="Guess2ViewController" customModule="Two_in_one" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WqN-mw-kc2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jN6-l0-Of2">
+                                <rect key="frame" x="80" y="430" width="79" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Bigger"/>
+                                <connections>
+                                    <action selector="didTapBiggerButton" destination="dRQ-G4-oD6" eventType="touchUpInside" id="Pkw-Qk-jMn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiu-rn-ywv">
+                                <rect key="frame" x="167" y="430" width="80" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Lesser"/>
+                                <connections>
+                                    <action selector="didTapLesserButton" destination="dRQ-G4-oD6" eventType="touchUpInside" id="fY0-7Z-zWA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gn-vm-G2d">
+                                <rect key="frame" x="255" y="430" width="116" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Guessed!"/>
+                                <connections>
+                                    <action selector="didTapGuessedButton" destination="dRQ-G4-oD6" eventType="touchUpInside" id="yvs-av-ZOM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jci-m1-aak">
+                                <rect key="frame" x="22" y="265" width="370" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TUI-Bp-ufc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Jci-m1-aak" firstAttribute="top" secondItem="3uX-Kn-c8X" secondAttribute="top" constant="221" id="CNT-7q-ted"/>
+                            <constraint firstItem="3uX-Kn-c8X" firstAttribute="trailing" secondItem="Jci-m1-aak" secondAttribute="trailing" constant="22" id="Rcx-lK-pJz"/>
+                            <constraint firstItem="Jci-m1-aak" firstAttribute="leading" secondItem="3uX-Kn-c8X" secondAttribute="leading" constant="22" id="e2j-ar-gkg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3uX-Kn-c8X"/>
+                    </view>
+                    <connections>
+                        <outlet property="guessingNumberLabel" destination="Jci-m1-aak" id="3XI-OP-KdG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egz-lL-UR8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100.00000000000001" y="72.991071428571431"/>
+        </scene>
+    </scenes>
+</document>

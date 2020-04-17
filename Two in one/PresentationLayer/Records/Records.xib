@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordsViewController" customModule="Two_in_one" customModuleProvider="target">
+            <connections>
+                <outlet property="recordsTableView" destination="aff-Bt-htM" id="jZo-ZD-hdY"/>
+                <outlet property="segmentedControl" destination="bHW-Ni-iGB" id="wT6-yP-bhD"/>
+                <outlet property="view" destination="iN0-l3-epB" id="cUj-d5-izZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="8sA-Q0-m1y">
+                    <rect key="frame" x="126" y="68" width="162" height="31"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-Ni-iGB">
+                            <rect key="frame" x="0.0" y="0.0" width="131" height="32"/>
+                            <segments>
+                                <segment title="Guess1"/>
+                                <segment title="Guess2"/>
+                            </segments>
+                            <connections>
+                                <action selector="didChangedGame:" destination="-1" eventType="valueChanged" id="qda-Pn-Luc"/>
+                            </connections>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S24-Te-Me8">
+                            <rect key="frame" x="138" y="0.0" width="24" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="JNz-gf-Lbi"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="sortButton"/>
+                            <connections>
+                                <action selector="didTapSortButton" destination="-2" eventType="touchUpInside" id="0ij-dO-6JS"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aff-Bt-htM">
+                    <rect key="frame" x="0.0" y="107" width="414" height="755"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Bys-nQ-pOo"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="aff-Bt-htM" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="B33-Kb-02M"/>
+                <constraint firstItem="8sA-Q0-m1y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="D5O-SK-IrE"/>
+                <constraint firstItem="aff-Bt-htM" firstAttribute="top" secondItem="8sA-Q0-m1y" secondAttribute="bottom" constant="8" id="Kd0-RO-SnC"/>
+                <constraint firstItem="8sA-Q0-m1y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="OhE-TP-xfA"/>
+                <constraint firstItem="aff-Bt-htM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TSv-IM-wag"/>
+                <constraint firstItem="aff-Bt-htM" firstAttribute="centerX" secondItem="8sA-Q0-m1y" secondAttribute="centerX" id="qfm-nD-lmv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="91.741071428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sortButton" width="25" height="25"/>
+    </resources>
+</document>
